@@ -1,0 +1,864 @@
+* {
+    box-sizing: border-box;
+}
+ 
+
+body {
+     background-image: url('../img/background.jpeg');
+     background-attachment: fixed;
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: cover;
+     margin: 0;
+     min-width: 1500px;
+}
+
+sub {
+    color: gray;
+    font-size: 15px;
+}
+
+select {
+    position: absolute;
+    min-height: 50px;
+    width: 200px;
+    border: 3px solid gray;
+    border-radius: 6px;
+    text-decoration: none;
+    appearance: none;
+    background:black;
+    color: gray;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+p {
+    font-size: 24px;
+    color: gray;
+}
+
+input[type="file"] {
+
+}
+
+input[type="button"] {
+    height: 50px;
+    width: 200px;
+    border: 3px solid gray;
+    border-radius: 6px;
+    background: snow;
+    color: black;
+    font-size: 15px;
+    text-align : center;
+    transition-property: color, background;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    color: gray;
+    background: black;
+}
+
+/*FOR PRINT*/
+
+@page {
+    size: 21cm 29.7cm;
+    margin: 4mm 4mm 4mm 4mm;
+}
+
+/*ADAPTATION*/
+@media screen and (max-width: 1280px) {
+    .personalLists .list { 
+        width: 100%;
+    } 
+    header .panel {
+        min-width: 1275px;
+    }
+}
+
+/*ANIMATIONS*/
+@-webkit-keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+/*SETTINGS*/
+
+header .panel {
+    background-color: black;
+    height : 300px;
+    opacity: 0.95;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center; 
+    justify-content: center; 
+    position: relative;
+    z-index: 10;
+}
+
+header .panel .title{
+    font-size: 50px;
+    margin: 0px;
+    position: relative;
+}
+
+header .panel .title:before {
+    content: url("");
+    position: absolute;
+    background-image: url('../img/wing.png');
+    background-size: 50px 50px;
+    left: -50px;
+    width: 50px;
+    height: 50px;
+}
+
+header .panel .title:after {
+    content: url("");
+    position: absolute;
+    background-image: url('../img/wing.png');
+    background-size: 50px 50px;
+    width: 50px;
+    height: 50px;
+    transform: scale(-1, 1);
+}
+
+header .panel .buttons {
+    width: 50%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    position: relative;
+    z-index: 10;
+}
+
+header .panel p {
+    margin-bottom:  3px;
+}
+
+header .panel .buttons div {
+    opacity: 1;
+    position: relative;
+}
+
+header .panel .buttons .select {
+    width: 500px;
+}
+
+header .panel .buttons .instrumentButtons {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 47px;
+    align-items: center;
+}
+
+
+header .panel .buttons .settingsIco {
+    width: 8vh;
+    height: 8vh;
+    background-image: url('../img/settings.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: static;
+}
+
+header .panel .buttons .circleOfPrint {
+  width: 8vh;
+  height: 8vh;
+  border-radius: 200px;
+  background: gray url('../img/print.png') no-repeat center center;
+  z-index: 4;
+  background-size: 80%;
+  cursor: pointer;
+  position: fixed;
+  top: 90vh;
+  left: 5%;
+}
+
+header .settingsIco:hover {
+    -webkit-animation: rotating 1.5s linear infinite;
+}
+
+
+/*MAIN*/
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+/*ADITIONAL SETTINGS*/
+.additionalSettings {
+    position: sticky;
+    width: 0;
+    height: 100vh;
+    top: 0;
+    background-color: black;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    border: solid 0px gray;
+    transition-property: width, border;
+    transition-duration: 0.5s;
+    overflow: hidden;
+    overflow-y: auto;
+    white-space: nowrap;
+    box-sizing: content-box;
+}
+
+
+.additionalSettings .controlButtons input {
+    width: 100px;
+}
+
+.additionalSettings  .controlButtons {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.additionalSettings > div > div > div {
+    border: solid  gray;
+    border-width: 2px 0 0 0;
+}
+
+.additionalSettings p {
+    margin: 5px;
+}
+
+.main .additionalSettings.active {
+    width: 300px;
+    border: solid 3px gray;
+} 
+
+.main .additionalSettings .swiperLists {
+    position: relative;
+    display: flex;
+    left: 0;
+    transition-property: left;
+    transition-duration: 0.5s;
+}
+
+.main .additionalSettings .swiperLists > *{
+    min-width: 300px;
+}
+
+.main .additionalSettings .swiperLists > div {
+    min-width: 300px;
+    border: solid 2px gray;
+}
+
+
+.additionalSettings .select {
+    height: 90px;
+    margin-left: 10px;
+}
+
+.additionalSettings .statsSettings {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px;
+    height: 320px;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+.additionalSettings .statsSettings input {
+    margin: 10px;
+}
+
+.additionalSettings .statsSettings .select {
+    height: 95px;
+    width: 28%;
+    margin-top:  20px;
+}
+
+.additionalSettings .statsSettings .select  select {
+    width:  65px;
+    text-align: center;
+}
+
+.additionalSettings .swiperLists .swipeList2 .listOfSkills {
+    display: flex;
+    flex-direction: column;
+}
+
+.additionalSettings .swiperLists .swipeList2 .listOfSkills input {
+    width: 20px;
+    height: 20px;
+}
+
+.additionalSettings .swiperLists .swipeList2 .listOfSkills > div {
+    display: flex;
+    flex-direction: row;
+}
+
+.additionalSettings .swiperLists .swipeList2 .listOfSkills  p {
+    margin: 0;
+}
+
+.additionalSettings .ideals textarea  {
+    margin-left: 15px;
+    width: 90%;
+    height: 100px;
+}
+
+.additionalSettings .swiperLists .spellSelect > div {
+    border: solid  gray;
+    border-width: 2px 0 0 0;
+}
+/*LISTS*/
+
+.personalLists {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.personalLists .list {
+    position: relative;
+    width: calc(21cm * 1.25);
+    height: calc(29.7cm * 1.25);
+}
+
+.personalLists .list div {
+    position: absolute;
+}
+
+.personalLists .list img {
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+} 
+
+.personalLists .list p {
+    z-index: 1;
+    position: absolute;
+    color: black;
+    margin:1px;
+    text-align: justify;
+}
+
+/*LIST 1*/
+
+/*Верхня панель*/
+
+.personalLists #list1 .topPanel {
+    top: 5.7%;
+    left: 43.9%;
+    width: 50%;
+    height: 6%;;
+}
+
+.personalLists #list1 .topPanel p {
+    position: absolute;
+    font-size: 16px;
+}
+
+.personalLists #list1 #playerRace {
+    top: 71.5%;
+    left: -0.1%;
+}
+
+.personalLists #list1 #playerClass {
+    top: 15.5%;
+    left: -0.1%;
+}
+
+.personalLists #list1 #playerBackground {
+    top: 15.5%;
+    left: 35.7%;
+}
+
+.personalLists #list1 #playerOutlook {
+    top: 71.5%;
+    left: 35.7%;
+}
+
+/*Характеристики*/
+.personalLists #list1 #characteristics  {
+    width: 8.7%;
+    height: 53%;
+    top: 20.5%;
+    left: 5%;
+}
+
+.personalLists #list1 #characteristics div {
+    width: 100%;
+    height: 10%;
+    z-index: 3;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 60% 0 0 0;
+}
+
+.personalLists #list1 #characteristics > :first-child{
+    margin: 0px;
+}
+
+.personalLists #list1 #characteristics div p{
+    position: static;
+}
+
+
+/*Хіти, швидкість і Кд.*/
+.personalLists #list1 .hits {
+    top: 15.5%;
+    left: 35%;
+    width: 30%;
+    height: 32%;
+}
+
+.personalLists #list1 .hits #hitsDice {
+    top: 75.7%;
+    left: 19.7%;
+}
+
+.personalLists #list1 .hits #maxHits {
+    top: 28.5%;
+    left: 40.7%;
+}
+
+.personalLists #list1 .hits #speed {
+    top: 10.5%;
+    left: 72.7%;
+}
+
+.personalLists #list1 .hits #іnitiative {
+    top: 10.5%;
+    left: 45.7%;
+}
+
+.personalLists #list1 .hits #KD {
+    top: 10.5%;
+    left: 14.5%;
+    width: 7%;
+    display: flex;
+    justify-content: center;
+}
+
+
+/*Бонус майстерності*/
+.personalLists #list1 #masterBonus {
+    top: 21.5%;
+    left: 16.5%;
+}
+
+
+/*Риси характеру, ідеали...*/
+.personalLists #list1 .ideals {
+    width: 24.6%;
+    height: 29%;
+    top: 17.3%;
+    left: 68.7%;
+}
+
+.personalLists #list1 .ideals p {
+    overflow: hidden;
+    width: 100%;
+    font-size: 14px;
+    height: 26.5%;
+}
+
+.personalLists #list1 .ideals #ideal {
+    top: 31%;
+}
+
+.personalLists #list1 .ideals #favor {
+    top: 55%;
+}
+
+.personalLists #list1 .ideals #weakness {
+    top: 79%;
+}
+
+/*Спаскидки*/
+.personalLists #list1 #saveThrows {
+    width: 19%;
+    height: 13%;
+    top: 25.2%;
+    left: 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+.personalLists #list1 #saveThrows p {
+    position: static;
+    display: flex;
+    align-items: center;
+}
+
+.personalLists #list1 #saveThrows * > :first-child {
+    font-size: 50px;
+    margin: 0px;
+}
+
+.personalLists #list1 #saveThrows > * {
+    display: flex;
+    height: 13.3%;
+    width: 25%;
+    flex-direction: row;
+    justify-content: space-between;
+    left: 6.9%;
+    position: relative;
+    top: 4%;
+}
+
+
+/*Навики*/
+.personalLists #list1 #skills {
+    width: 19%;
+    height: 34%;
+    top: 39.2%;
+    left: 15%;
+}
+
+.personalLists #list1 #skills p {
+    position: static;
+    display: flex;
+    align-items: center;
+}
+
+.personalLists #list1 #skills * > :first-child {
+    font-size: 50px;
+    margin: 0px;
+}
+
+.personalLists #list1 #skills > * {
+display: flex;
+    height: 5.02%;
+    width: 25%;
+    flex-direction: row;
+    justify-content: space-between;
+    left: 6.9%;
+    position: relative;
+    top: 3.5%;
+}
+
+/*вміння*/
+
+.personalLists #list1 #featuresList {
+    height: 47%;
+    width: 26%;
+    top: 48.4%;
+    left: 68%;
+    font-size: 17px;
+}
+
+/*Мова*/
+.personalLists #list1 #languagesList {
+    height: 16%;
+    width: 26.9%;
+    top: 79%;
+    left: 5.6%;
+    font-size: 14px;
+}
+
+/*пасивна мудрість*/
+.personalLists #list1 #passiveWisdom {
+    top: 74.8%;
+    left: 5.5%;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+}
+
+/*речі*/
+.personalLists #list1 #items {
+    height: 20%;
+    width: 19.9%;
+    top: 75%;
+    left: 43.6%;
+    font-size: 14px;
+    text-align: left;
+}
+
+/*зброя*/
+.personalLists #list1 .weapons {
+    height: 23%;
+    width: 28%;
+    top: 49%;
+    left: 36%;
+}
+
+.personalLists #list1 .weapons .weaponList {
+    height: 33%;
+    width: 99%;
+    top: 1%;
+    left: 1%;
+}
+
+.personalLists #list1 .weapons .weaponList p {
+    font-size: 13.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.personalLists #list1 .weapons .weaponList #weaponName1 {
+    top: 3%;
+    height: 26%;
+    width: 38%;
+}
+
+.personalLists #list1 .weapons .weaponList #weaponName2 {
+    top: 36%;
+    height: 26%;
+    width: 38%;
+}
+
+.personalLists #list1 .weapons .weaponList #weaponName3 {
+    top: 72%;
+    height: 26%;
+    width: 38%;
+}
+
+.personalLists #list1 .weapons .weaponList #bonusAtack1 {
+    top: 3%;
+    left: 41%;
+    height: 26%;
+    width: 18%;
+}
+
+.personalLists #list1 .weapons .weaponList #bonusAtack2 {
+    top: 36%;
+    left: 41%;
+    height: 26%;
+    width: 18%;
+}
+
+.personalLists #list1 .weapons .weaponList #bonusAtack3 {
+    top: 72%;
+    left: 41%;
+    height: 26%;
+    width: 18%;
+}
+
+.personalLists #list1 .weapons .weaponList #damage1 {
+    top: 3%;
+    left: 62%;
+    height: 26%;
+    width: 36%;
+}
+
+.personalLists #list1 .weapons .weaponList #damage2 {
+    top: 36%;
+    left: 62%;
+    height: 26%;
+    width: 36%;
+}
+
+.personalLists #list1 .weapons .weaponList #damage3 {
+    top: 72%;
+    left: 62%;
+    height: 26%;
+    width: 36%;
+}
+
+.personalLists #list1 .weapons .weaponList #ammunition {
+    top: 108%;
+    width: 98%;
+    text-align: left;
+    display: block;
+}
+
+/*Гроші*/
+.personalLists #list1 .money {
+    top: 75%;
+    left: 38%;
+    height: 16%;
+    width: 5%;
+}
+
+.personalLists #list1 .money #copperCoin{
+    top: 5%;
+}
+
+.personalLists #list1 .money #silverCoin{
+    top: 25%;
+}
+
+.personalLists #list1 .money #elctriumCoin{
+    top: 47%;
+}
+
+.personalLists #list1 .money #goldCoin{
+    top: 67%;
+}
+
+.personalLists #list1 .money #platinumCoin{
+    top: 87%;
+
+}
+
+/*LIST 2*/
+.personalLists #list2 .optionalInfo {
+    top: 6%;
+    left: 43%;
+    width: 51%;
+    height: 7%;
+}
+
+/*одаткова інформація*/
+
+.personalLists #list2 .optionalInfo p {
+    font-size: 17px;
+    width: 38%;
+    height: 20%;
+}
+
+.personalLists #list2 .optionalInfo #age {
+    top: 10%;
+    left: 2%;
+}
+
+.personalLists #list2 .optionalInfo #eye {
+    top: 60%;
+    left: 2%;
+}
+
+.personalLists #list2 .optionalInfo #growth {
+    top: 10%;
+    left: 39%;
+}
+
+.personalLists #list2 .optionalInfo #skin {
+    top: 60%;
+    left: 39%;
+}
+
+.personalLists #list2 .optionalInfo #weight {
+    top: 10%;
+    left: 71%;
+}
+
+.personalLists #list2 .optionalInfo #hair {
+    top: 60%;
+    left: 71%;
+}
+
+.personalLists #list2 .characterImg {
+    width: 28.2%;
+    height: 28%;
+    top: 16%;
+    left: 5%;
+    overflow: hidden;
+    border-radius: 3%;
+
+}
+.personalLists #list2 .characterImg img{
+    border-radius: 3%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    width: auto;
+    height: 100%;
+}
+
+.personalLists #list2 .characterImg  input[type = "button"] {
+    width: 115px;
+    height: 25px;
+}
+
+.personalLists #list2 .characterImg > div {
+    z-index: 5;
+    position: absolute;
+    top: 83%;
+    left: 50%;
+    display: flex;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+
+}
+
+
+/*Інформація про заклинателей*/
+
+.personalLists #list3 #spellcastClass {
+    font-size: 21px;
+    top: 8.4%;
+    left: 8%;
+}
+
+.personalLists #list3 .spellcastInfo {
+    top: 5.5%;
+    left: 43%;
+    width: 51%;
+    height: 8%;
+}
+
+.personalLists #list3 .spellcastInfo p {
+    top: 25%;
+    width: 22%;
+    display: flex;
+    justify-content: center;
+}
+
+.personalLists #list3 .spellcastInfo #baseSpellChar { 
+    left: 6%;
+}
+
+.personalLists #list3 .spellcastInfo #spellDifficult { 
+    left: 38%;
+}
+
+.personalLists #list3 .spellcastInfo #bonusSpellAtack { 
+    left: 71.3%;
+}
+
+/*Список заклинань*/
+.personalLists #list3 #complot {
+    top: 21.7%;
+    left: 5.3%;
+    line-height: 167%;
+    font-size: 15px;
+    width: 29%;
+}
+
+.personalLists #list3 .spellList {
+    top: 38%;
+    left: 5.3%;
+    height: 29%;
+    width: 29%;
+}
+
+.personalLists #list3 .spellList #availableSpells {
+    top: 25%;
+    left: 19%;
+}
+
+.personalLists #list3 .spellList #spells {
+    top: 42.4%;
+    left: 5.3%;
+    line-height: 167%;
+    font-size: 15px;
+}
+
+.personalLists #list4 #textAboutAll {
+    top: 0%;
+    width: 100%;
+    background: white;
+    padding: 5% 6% 0% 6%;
+}
+
+.personalLists #list4 #textAboutAll {
+    font-size: 15px;
+}
+
+.personalLists #list4 #textAboutAll h2 {
+    margin: 0px;
+}

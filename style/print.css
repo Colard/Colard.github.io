@@ -1,0 +1,173 @@
+@media print {
+  	body * {
+		display: hidden;
+	}
+
+	.main .personalLists .list{
+		display: block;
+		visibility: visible;
+		width: 21cm;
+		height: 29.7cm;
+	}
+	
+	.personalLists img {
+		width: 100%;
+		height: 100%;
+	}
+
+	.main .personalLists {
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+	body header .panel{
+		display: none;
+	}
+
+	.personalLists p {
+		font-size:  17px;
+	}
+
+	.main .additionalSettings {
+		display: none;
+	}
+
+
+	/*LIST 1*/ 
+
+	/*Верхня панель*/
+	.personalLists #list1 #playerRace {
+    	font-size: 12px;
+	}
+
+	.personalLists #list1 #playerClass {
+    	font-size: 12px;
+	}
+
+	.personalLists #list1 #playerBackground {
+    	font-size: 12px;
+	}
+
+	.personalLists #list1 #playerOutlook {
+		font-size: 12px;
+	}
+
+	/*Хіти, швидкість і Кд.*/
+	.personalLists #list1 #hitsDice {
+		font-size: 16px;
+	}
+
+	/*Спаскидки*/
+	.personalLists #list1 #saveThrows * > :first-child {
+		font-size: 35px;
+	}
+
+	.personalLists #list1 #saveThrows > * {
+		font-size: 16px;
+	}
+
+	/*Риси характеру, ідеали...*/
+	.personalLists #list1 #featureOfCharacter {
+	    font-size: 11px;
+	}
+
+	.personalLists #list1 #ideal {
+	  	font-size: 11px;
+	}
+
+	.personalLists #list1 #favor {
+	    font-size: 11px;
+	}
+
+	.personalLists #list1 #weakness {
+	    font-size: 11px;
+	}
+
+	/*Навики*/
+	.personalLists #list1 #skills * > :first-child {
+		font-size: 35px;
+	}
+
+	.personalLists #list1 #skills > * {
+		font-size: 16px;
+	}
+
+	/*вміння*/
+
+	.personalLists #list1 #featuresList {
+		font-size: 11px;
+	}
+
+	/*Мова*/
+	.personalLists #list1 #languagesList{
+	    font-size: 11px;
+	}
+
+	/*пасивна мудрість*/
+	.personalLists #list1 #passiveWisdom {
+	    left: 5%;
+	}
+
+	/*речі*/
+	.personalLists #list1 #items {
+	    font-size: 11px;
+	}
+
+	/*зброя*/
+	.personalLists #list1 .weapons .weaponList p {
+		font-size: 10.5px;
+	}
+	
+	/*LSIT 2*/
+	/*одаткова інформація*/
+
+	.main .personalLists #list2 > div {
+		top: 7.5%;
+	}
+
+	.personalLists #list2 .optionalInfo p {
+		font-size: 12px;
+	}
+
+	.personalLists #list2 .characterImg > div {
+		display: none;
+	}
+
+	body .personalLists #list2 .characterImg {
+    top: 17.25%;
+
+
+}
+
+	/*LIST 3*/
+	/*Інформація про клас*/
+
+	.personalLists #list3 .spellcastInfo {
+	    top: 8%;
+	}
+	.main .personalLists #list3 #spellcastClass {
+    	font-size: 16px;
+    	top: 10.5%;
+	}
+
+	/*заговори*/
+	.personalLists #list3 #complot {
+		line-height: 20px;
+	    font-size: 12px;
+	    top: 24.1%;
+	}
+
+	/*заклинання*/
+	.personalLists #list3 .spellList #spells { 
+		line-height: 20px;
+	    font-size: 12px;
+	    top: 50.4%;
+	}
+
+	/*Все інше*/
+	.personalLists #list4 #textAboutAll {
+		font-size: 13px;
+	}
+
+}

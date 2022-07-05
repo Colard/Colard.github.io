@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="SHORTCUT ICON" href="favicon.ico" type="image/x-icon">
+	
+	<link href="style/styleOfCircle.css" rel="stylesheet">
+	<link href="style/global.css" rel="stylesheet">
+	<link href="style/print.css" rel="stylesheet">
+
+	<title>Генератор персонажів D&D</title>
+
+	<script src="js/tables/tablesFunction.js"></script>
+	<script src="js/tables/languages.js"></script>
+	<script src="js/tables/outlook.js"></script>
+	<script src="js/tables/spells.js"></script>
+	<script src="js/tables/items.js"></script>
+	<script src="js/tables/background.js"></script>
+	<script src="js/tables/races.js"></script>
+	<script src="js/tables/classes.js"></script>
+
+	<script src="js/classes.js"></script>
+
+</head>
+<body>
+	<header>
+		<div class = "panel">
+			<p class = "title">ГЕНЕРАТОР ПЕРСОНАЖІВ D&D </p>
+			<div class = "buttons">
+				<div class = "select">
+					<p>Раса:</p>
+					<select id = "race" ></select>
+				</div>
+				<div class = "select">
+					<p>Клас:</p>
+					<select id = "class"></select>
+				</div>
+				<div class = "select">
+					<p>Передісторія:</p>
+					<select id = "background"></select>
+				</div class = "generatorButton">
+				
+				<div class = "instrumentButtons">
+					<div id="circleContent" >
+						<div id="circle" onclick="generate()"></div>
+					</div>
+					<div class="circleOfPrint" onclick="window.print()"></div>
+					<div class = "settingsIco"> </div>
+				</div>
+			</div>
+
+		</div>
+	</header>
+	<div class = "main">
+		<div class = "personalLists">
+			<div class = "list" id="list1"> 
+				<img src = img/lists/list1.jpg>
+				<!-- Верхня панель -->
+				<div class = "topPanel">
+					<p id = playerRace></p>
+					<p id = playerClass></p>
+					<p id = playerBackground></p>
+					<p id = playerOutlook></p>
+				</div>
+				<!-- Характеристики -->
+				<div id = "characteristics"></div>
+				<!-- Хіти, швидкість і Кд. -->
+				<div class = "hits">	
+					<p id = "maxHits"></p>
+					<p id = "hitsDice"></p>
+					<p id = "speed"></p>
+					<p id = "іnitiative"></p>
+					<p id = "KD"></p>
+				</div>
+				<!-- Бонус майстерності -->
+				<p id = "masterBonus"></p>
+				<!-- Спаскидки -->
+				<div id = "saveThrows"></div>
+				<!-- Риси характеру, ідеали... -->
+				<div class="ideals">
+					<p id ="featureOfCharacter"></p>
+					<p id ="ideal"></p>
+					<p id ="favor"></p>
+					<p id ="weakness"></p>
+				</div>
+				<!-- Навики -->
+				<div id = "skills"></div>
+				<!-- Уміння -->
+				<p id = featuresList></p>
+				<!-- Володіння -->
+				<p id = "languagesList"></p>
+				<!-- Пасивна мудрість -->
+				<p id = "passiveWisdom"></p>
+				<!-- Речі -->
+				<p id = "items"></p>
+				<!-- Зброя -->
+				<div class = "weapons">
+					<div class = "weaponList">
+						<p id = "weaponName1"></p>
+						<p id = "bonusAtack1"></p>
+						<p id = "damage1"></p>
+						<p id = "weaponName2"></p>
+						<p id = "bonusAtack2"></p>
+						<p id = "damage2"></p>
+						<p id = "weaponName3"></p>
+						<p id = "bonusAtack3"></p>
+						<p id = "damage3"></p>
+						<p id = "ammunition"></p>
+					</div>
+				</div>
+				<!-- Гроші -->
+				<div class = "money">
+					<p id = "copperCoin"></p>
+					<p id = "silverCoin"></p>
+					<p id = "elctriumCoin"></p>
+					<p id = "goldCoin"></p>
+					<p id = "platinumCoin"></p>
+				</div>
+			</div>
+			<div class = "list" id="list2">
+				<img src = img/lists/list2.jpg>
+				<div class = "characterImg">
+					<img alt = "" id = "imgWithPlayer"></img >
+					<div class = controlButtons>
+						<input type="file" id="pic" accept=".jpg, .jpeg, .png">
+						<input type = "button" class = "submit" value = "Підтвердити" onclick = "submit()">
+						<input type = "button" class = "delete" value = "Видалити" onclick="document.getElementById(`imgWithPlayer`).src = ``">
+					</div>
+				</div>
+				<div class="optionalInfo">
+					<p id = "age"></p>
+					<p id = "eye"></p>
+					<p id = "growth"></p>
+					<p id = "skin"></p>
+					<p id = "weight"></p>
+					<p id = "hair"></p>
+				</div>
+			</div>
+			<div class = "list" id="list3">
+				<img src = img/lists/list3.jpg>
+				<!-- Тип магії та характеристики мага -->
+				<p id = "spellcastClass"></p>
+				<div class = spellcastInfo>
+					<p id = "baseSpellChar"></p>
+					<p id = "spellDifficult"></p>
+					<p id = "bonusSpellAtack"></p>		
+				</div>
+				<!-- список магії -->
+				<p id = "complot"></p>
+				<div class = "spellList">
+					<p id = "availableSpells"></p>
+					<p id = "spells"></p>
+				</div>
+			</div>
+			<div class = "list" id="list4">
+				<img src = img/lists/list4.jpg>
+				<p id = "textAboutAll"></p>
+			</div>
+		</div>
+		<div class = "additionalSettings" >
+			<div class = "controlButtons">
+					<input type = "button" class = "prev" value ="Назад">
+					<input type = "button" class = "next" value ="Далі">
+			</div>
+			<div class = swiperLists>
+				<div class = "swipeList1">
+						<p>Головні уточнення:</p>
+						<div class = "starterPropsSettings">
+							<div class = "select">
+								<p>Підраса:</p>
+								<select id = "subrace" >
+									<option>--Випадково--</option>
+								</select>
+							</div>
+							<div class = "select">
+								<p>Підклас:</p>
+								<select id = "subсlass" disabled = 1 style = "background-color: white"> 
+									<option>coming soon</option>
+								</select>
+							</div>
+							<div class = "select" >
+								<p>Напрям передісторії:</p>
+								<select id = "subbackround" >
+									<option>--Випадково--</option>
+								</select>
+							</div>
+							<div class = "select">
+								<p>Cвітогляд:</p>
+								<select id = "outlook"></select>
+							</div>
+						</div>
+						<p>Характеристики:</p>
+						<div class = "statsSettings">
+							<div class = "select">
+								<p>Сил.</p>
+								<select><option>R</option></select>
+							</div>
+							<div class = "select">
+								<p>Спр.</p>
+								<select><option>R</option></select>
+							</div>
+							<div class = "select">
+								<p>Тіл.</p>
+								<select><option>R</option></select>
+							</div>
+							<div class = "select">
+								<p>Інт.</p>
+								<select><option>R</option></select>
+							</div>
+							<div class = "select">
+								<p>Мдр.</p>
+								<select><option>R</option></select>
+							</div>
+							<div class = "select">
+								<p>Хар.</p>
+								<select><option>R</option></select>
+							</div>
+						</div>
+				</div>
+				<div class = "swipeList2">
+					<p>Уміння:</p>
+					<sub>(при виборі класу/передісторії)</sub>
+					<p class = "canChoose">Можливо вибрати: 0</p>
+					<div class = 'listOfSkills'>
+					</div>
+				</div>
+				<div class = "swipeList3">
+					<p>Предмети:</p>
+					<sub>(при виборі класу)</sub>
+					<div class = 'variantsOfItems'>
+					</div>
+				</div>
+				<div class = "swipeList4">
+					<div>
+						<p>Характер</p>
+					</div>
+					<div class = "ideals"> 
+						<div class = "select">
+							<p>Риси характеру</p>
+							<select>
+								<option>--Випадково--</option>
+								<option>Власне</option>
+							</select>
+						</div>
+						<textarea  disabled></textarea>
+						<div class = "select">
+							<p>Ідеали</p>
+							<select>
+								<option>--Випадково--</option>
+								<option>Власне</option>
+							</select>
+						</div>
+						<textarea  disabled></textarea>
+						<div class = "select">
+							<p>Прив`язаності</p>
+							<select>
+								<option>--Випадково--</option>
+								<option>Власне</option>
+							</select>
+						</div>
+						<textarea  disabled></textarea>
+						<div class = "select">
+							<p>Слабості</p>
+							<select>
+								<option>--Випадково--</option>
+								<option>Власне</option>
+							</select>
+						</div>
+						<textarea  disabled></textarea>
+					</div>
+				</div>
+				<div class = "swipeList5">
+					<div>
+						<p>Зовнішність</p>
+						<sub>(при виборі підраси)</sub>
+					</div>
+					<div class = "look"> 
+						<div class = "select">
+							<p>Вік(р.)</p>
+							<select><option>--Випадково--</option></select>
+						</div>
+						<div class = "select">
+							<p>Колір очей</p>
+							<select><option>--Випадково--</option></select>
+						</div>
+						<div class = "select">
+							<p>Ріст(фт.)</p>
+							<select><option>--Випадково--</option></select>
+						</div>
+						<div class = "select">
+							<p>Шкіра</p>
+							<select><option>--Випадково--</option></select>
+						</div>
+						<div class = "select">
+							<p>Вага(фунт.)</p>
+							<select><option>--Випадково--</option></select>
+						</div>
+						<div class = "select">
+							<p>Волосся</p>
+							<select><option>--Випадково--</option></select>
+						</div>
+					</div>
+				</div>
+				<div class = "swipeList6">
+					<div>
+						<p>Заклинання</p>
+						<sub>(при виборі класу)</sub>
+					</div>
+					<div class = "spellSelect"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/helperFunction.js"></script>
+	<script src="js/animation.js"></script>
+	<script src="js/generators.js"></script>
+	<script src="js/visualization.js"></script>
+	<script src="js/starterSettings.js"></script>
+	<script src="js/events.js"></script>
+
+
+</body>
+</html>
