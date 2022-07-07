@@ -1,0 +1,23 @@
+@media all and (max-width: 1300px) {
+  .main {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .main .additionalSettings.active {
+    position: static;
+    width: calc(26.25cm);
+    height: 840px;
+    transition-property: width, border, height;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .additionalSettings .controlButtons {
+    display: none;
+  }
+
+  header .panel .buttons {
+    width: 85%;
+  }
+}

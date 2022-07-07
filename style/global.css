@@ -4,13 +4,13 @@
  
 
 body {
-     background-image: url('../img/background.jpeg');
-     background-attachment: fixed;
-     background-repeat: no-repeat;
-     background-position: center;
-     background-size: cover;
-     margin: 0;
-     min-width: 1500px;
+    background-image: url('../img/background.jpeg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+    min-width: 1000px;
 }
 
 sub {
@@ -67,16 +67,6 @@ input[type="button"]:hover {
     margin: 4mm 4mm 4mm 4mm;
 }
 
-/*ADAPTATION*/
-@media screen and (max-width: 1280px) {
-    .personalLists .list { 
-        width: 100%;
-    } 
-    header .panel {
-        min-width: 1275px;
-    }
-}
-
 /*ANIMATIONS*/
 @-webkit-keyframes rotating {
     from{
@@ -130,7 +120,7 @@ header .panel .title:after {
 }
 
 header .panel .buttons {
-    width: 50%;
+    width: 60%;
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
@@ -197,14 +187,14 @@ header .settingsIco:hover {
 .additionalSettings {
     position: sticky;
     width: 0;
-    height: 100vh;
+    height: 0;
     top: 0;
     background-color: black;
     opacity: 0.9;
     display: flex;
     flex-direction: column;
     border: solid 0px gray;
-    transition-property: width, border;
+    transition-property: width, border, height;
     transition-duration: 0.5s;
     overflow: hidden;
     overflow-y: auto;
@@ -234,6 +224,7 @@ header .settingsIco:hover {
 
 .main .additionalSettings.active {
     width: 300px;
+    height: 100vh;
     border: solid 3px gray;
 } 
 
