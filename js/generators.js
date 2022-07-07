@@ -220,8 +220,8 @@ function possessionCreator(player) {
 }
 
 function creatingItems(player){
-  player.class.starterItems(player);
   takeSelectedItems(player);
+  player.class.starterItems(player);
   player.background.starterItems(player); 
 }
 
