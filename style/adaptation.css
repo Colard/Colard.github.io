@@ -4,11 +4,16 @@
     align-items: center;
   }
 
+  .main .additionalSettings {
+    height: 0;
+    width: calc(26.25cm);
+    transition-property: border, height;
+  }
+
   .main .additionalSettings.active {
     position: static;
     width: calc(26.25cm);
     height: 840px;
-    transition-property: width, border, height;
     overflow-x: auto;
     overflow-y: hidden;
   }
