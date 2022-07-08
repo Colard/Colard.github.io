@@ -13,7 +13,7 @@
   .main .additionalSettings.active {
     position: static;
     width: calc(26.25cm);
-    height: 840px;
+    height: auto;
     overflow-x: auto;
     overflow-y: hidden;
   }
