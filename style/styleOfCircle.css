@@ -1,6 +1,6 @@
 #circle {
-  width: 8vh;
-  height: 8vh;
+  width: 60px;
+  height: 60px;
   border-radius: 200px;
   background: gray;
   z-index: 4;
@@ -30,21 +30,21 @@
 }
 
 #circleContent {
-  width: 8vh;
-  height: 8vh;
+  width: 60px;
+  height: 60px;
   z-index: 10;
 }
 
 
 @keyframes bigToSmall {
   0% {
-    width: 8vh;
-    height: 8vh;
+    width: 60px;
+    height: 60px;
   }
   25% {
     -webkit-transform: rotate(360deg);
-    width: 8vh;
-    height: 8vh;
+    width: 60px;
+    height: 60px;
   }
   50% {
     -webkit-transform: rotate(360deg);
@@ -53,9 +53,9 @@
   }
   100% {
     top: 90vh;
-    left: 90%;
-    width: 8vh;
-    height: 8vh;
+    right: 20px;
+    width: 60px;
+    height: 60px;
     position: fixed;  
   }   
 } 
@@ -63,14 +63,14 @@
 @keyframes SmallToBig {
   0% {
     top: 90vh;
-    left: 90%;
+    right: 20px;
     -webkit-transform: rotate(360deg);
     position: fixed;  
   }
   25% {
     -webkit-transform: rotate(360deg);
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
   }
   50% {
     -webkit-transform: rotate(360deg);
@@ -79,7 +79,7 @@
   }
   100% {
     position: static;
-    width: 8vh;
-    height: 8vh;
+    width: 60px;
+    height: 60px;
   }   
 } 

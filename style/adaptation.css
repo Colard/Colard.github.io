@@ -26,3 +26,144 @@
     width: 85%;
   }
 }
+
+@media all and (max-width: 480px) {
+  body {
+    min-width: calc(21cm * 0.5);
+  }
+
+  header .panel {
+    height: 500px;
+  }
+
+  header .panel .title {
+    font-size: 40px;
+    margin: 0px;
+    position: relative;
+    text-align: center;
+    border-width: 2px 0;
+    border: solid gray;
+  }
+
+  header .panel .title::before {
+    display: none;
+  }
+
+  header .panel .title::after {
+    display: none;
+  }
+
+  header .panel .buttons .select {
+      width: auto;
+      height: 90px;
+  }
+
+  header .panel .buttons .select select {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  header .panel .buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+  }
+
+  header .panel .buttons .instrumentButtons {
+    display: flex;
+    top: 26px;
+    align-items: center;
+  }
+  .personalLists .list {
+    position: relative;
+    width: calc(21cm * 0.5);
+    height: calc(29.7cm * 0.5);
+  }
+
+  .main .additionalSettings {
+    height: 0;
+    width: calc(21cm * 0.5);
+    transition-property: border, height;
+  }
+
+  .main .additionalSettings.active {
+    position: static;
+    width: calc(21cm * 0.5);
+    height: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .personalLists  p {
+    font-size: 9px;
+    color: gray;
+  }
+
+  .personalLists #list1 #saveThrows * > :first-child {
+    font-size: 22px;
+  }
+
+  .personalLists #list1 .topPanel p {
+    position: absolute;
+    font-size: 6px;
+  }
+  .personalLists #list1 #skills * > :first-child {
+    font-size: 22px;
+  }
+
+  .personalLists #list1 .ideals p {
+      font-size: 6px;
+  }
+
+  .personalLists #list1 #featuresList {
+    font-size: 6px;
+  }
+
+  .personalLists #list1 .weapons .weaponList p {
+    font-size: 5.5px;
+  }
+
+  .personalLists #list1 #items {
+    font-size: 6px;
+  }
+
+  .personalLists #list1 #passiveWisdom {
+    left: 3.5%;
+  }
+
+  .personalLists #list1 #languagesList {
+    font-size: 6px;
+  }
+
+  .personalLists #list2 .optionalInfo p {
+    font-size: 6px;
+  }
+
+  .personalLists #list2 .characterImg input[type = "button"] {
+    font-size: 6px;
+    width: 53%;
+    height: 20px;
+  }
+
+  input[type="file"] {
+    font-size: 6px;
+  }
+
+  .personalLists #list3 #spellcastClass {
+    font-size: 10px;
+  }
+
+  .personalLists #list3 #complot {
+    font-size: 6px;
+  }
+
+  .personalLists #list3 .spellList #spells {
+    font-size: 6px;
+  }
+
+  .personalLists #list4 #textAboutAll {
+    font-size: 7px;
+  }
+
+}

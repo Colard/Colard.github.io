@@ -151,8 +151,8 @@ header .panel .buttons .instrumentButtons {
 
 
 header .panel .buttons .settingsIco {
-    width: 8vh;
-    height: 8vh;
+    width: 60px;
+    height: 60px;
     background-image: url('../img/settings.png');
     background-repeat: no-repeat;
     background-size: 100%;
@@ -160,8 +160,8 @@ header .panel .buttons .settingsIco {
 }
 
 header .panel .buttons .circleOfPrint {
-  width: 8vh;
-  height: 8vh;
+  width: 60px;
+  height: 60px;
   border-radius: 200px;
   background: gray url('../img/print.png') no-repeat center center;
   z-index: 4;
@@ -169,7 +169,7 @@ header .panel .buttons .circleOfPrint {
   cursor: pointer;
   position: fixed;
   top: 90vh;
-  left: 5%;
+  left: 20px;
 }
 
 header .settingsIco:hover {
