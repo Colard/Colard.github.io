@@ -85,7 +85,6 @@ function generate() {
   
   //Заповнення листа
   listCreater(player);
-  
 }
 
 //
@@ -243,17 +242,23 @@ function takeSelectedItems(player) {
 function generateAdditionalInfo(player) {
   let selects = document.querySelectorAll(".additionalSettings .look .select select ");
 
-  player.age = (selects[0].selectedIndex > 0) ? +selects[0].value : randomInteger(player.race.minAge - player.race.minAge*0.1, player.race.age+20);
+  player.age = (selects[0].selectedIndex > 0) ? +selects[0].value : 
+    randomInteger(player.race.minAge - player.race.minAge*0.1, player.race.age+20);
 
-  player.eye = (selects[1].selectedIndex > 0) ? selects[1].value : player.race.eye[randomInteger(0, player.race.eye.length-1)];
+  player.eye = (selects[1].selectedIndex > 0) ? selects[1].value : 
+    player.race.eye[randomInteger(0, player.race.eye.length-1)];
 
-  player.growth = (selects[2].selectedIndex > 0) ? +selects[2].value : +(randomInteger(player.race.minSize -0.5,player.race.maxSize-0.5) + +Math.random().toFixed(2)).toFixed(2);
+  player.growth = (selects[2].selectedIndex > 0) ? +selects[2].value : 
+    +(randomInteger(player.race.minSize -0.5,player.race.maxSize-0.5) + +Math.random().toFixed(2)).toFixed(2);
 
-  player.skin = (selects[3].selectedIndex > 0) ? selects[3].value : player.race.skinColor[randomInteger(0, player.race.skinColor.length-1)];
+  player.skin = (selects[3].selectedIndex > 0) ? selects[3].value : 
+    player.race.skinColor[randomInteger(0, player.race.skinColor.length-1)];
 
-  player.weight = (selects[4].selectedIndex > 0) ? +selects[4].value : +(randomInteger(player.race.minMass, player.race.maxMass-1) + +Math.random().toFixed(2)).toFixed(2);
+  player.weight = (selects[4].selectedIndex > 0) ? +selects[4].value : 
+    +(randomInteger(player.race.minMass, player.race.maxMass-1) + +Math.random().toFixed(2)).toFixed(2);
 
-  player.hair = (selects[5].selectedIndex > 0) ? selects[5].value : player.race.hair[randomInteger(0, player.race.hair.length-1)];
+  player.hair = (selects[5].selectedIndex > 0) ? selects[5].value : 
+    player.race.hair[randomInteger(0, player.race.hair.length-1)];
 
   return player;
 }

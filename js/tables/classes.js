@@ -532,7 +532,7 @@ var classes = [
 			],
 
 		spellcastClass: "Жрець",
-		baseSpellChar:5,
+		baseSpellChar:4,
 		complotNum: 3,
 		complotList: [15, 16, 17, 20, 23, 24, 26],
 		allSpells: 0,
