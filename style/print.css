@@ -123,7 +123,7 @@
 	/*одаткова інформація*/
 
 	.main .personalLists #list2 > div {
-		top: 7.5%;
+		top: 6.2%;
 	}
 
 	.personalLists #list2 .optionalInfo p {
@@ -135,7 +135,7 @@
 	}
 
 	body .personalLists #list2 .characterImg {
-    top: 17.25%;
+    top: 16.25%;
 
 
 }
@@ -144,30 +144,30 @@
 	/*Інформація про клас*/
 
 	.personalLists #list3 .spellcastInfo {
-	    top: 8%;
+	    top: 6%;
 	}
 	.main .personalLists #list3 #spellcastClass {
     	font-size: 16px;
-    	top: 10.5%;
+    	top: 9.5%;
 	}
 
 	/*заговори*/
 	.personalLists #list3 #complot {
 		line-height: 20px;
 	    font-size: 12px;
-	    top: 24.1%;
+	    top: 23.5%;
 	}
 
 	/*заклинання*/
 	.personalLists #list3 .spellList #spells { 
 		line-height: 20px;
 	    font-size: 12px;
-	    top: 50.4%;
+	    top: 48.6%;
 	}
 
 	/*Все інше*/
 	.personalLists #list4 #textAboutAll {
-		top: 4%;
+		top: 3%;
 		font-size: 13px;
 	}
 
